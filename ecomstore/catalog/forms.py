@@ -1,6 +1,8 @@
 __author__ = 'stefan'
 from django import forms
+
 from models import Product
+
 
 class ProductAdminForm(forms.ModelForm):
     class Meta:

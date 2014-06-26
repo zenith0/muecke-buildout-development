@@ -1,5 +1,5 @@
 import os
-SITE_ROOT = os.path.dirname(os.path.dirname(__file__).decode('utf-8'))
+SITE_ROOT = os.path.abspath(os.path.dirname(__file__).decode('utf-8'))
 # Django settings for ecomstore project.
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -56,7 +56,7 @@ MEDIA_ROOT = ''
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = ''
+MEDIA_URL = '/static/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -66,7 +66,7 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -81,7 +81,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -105,16 +105,17 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'ecomstore.urls'
+ROOT_URLCONF = 'urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'ecomstore.wsgi.application'
+# Python dotted path to the WSGI application used by Django's runserver.
+WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(SITE_ROOT, 'templates/')
+    os.path.join(SITE_ROOT, 'templates')
 )
 
 INSTALLED_APPS = (
@@ -126,6 +127,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'utils'
  #   'django.core.context_processors.static'
 #    'djangodblog',
     # Uncomment the next line to enable the admin:
@@ -134,6 +136,18 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+ #   'django.core.context_processors.tz',
+#    'django.core.context_processors.request',
+#    'django.contrib.messages.context_processors.messages',
+    'utils.context_processors.estore',
+)
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
 # A sample logging configuration. The only tangible logging
@@ -186,7 +200,7 @@ LOGGING = {
             'formatter': 'verbose',
             #consider: 'filename': '/var/log/<myapp>/app.log',
             #will need perms at location below:
-            'filename': '/var/log/ecomstore.log',
+            'filename': 'ecomstore.log',
             'mode': 'a', #append+create
         },
         'timed-log-file': {
@@ -195,7 +209,7 @@ LOGGING = {
             'formatter': 'parsefriendly',
             #consider: 'filename': '/var/log/<myapp>/app.log',
             #will need perms at location below:
-            'filename': '/var/log/ecomstore-timed.log',
+            'filename': 'ecomstore-timed.log',
             'when': 'midnight',
             #'backupCount': '30', #approx 1 month worth
         },
@@ -205,7 +219,7 @@ LOGGING = {
             'formatter': 'parsefriendly',
             #consider: 'filename': '/var/log/<myapp>/app.log',
             #will need perms at location below:
-            'filename': '/var/log/ecomstore-watched.log',
+            'filename': 'ecomstore-watched.log',
             'mode': 'a', #append+create
         },
     },
@@ -222,3 +236,7 @@ LOGGING = {
         },
     }
 }
+
+SITE_NAME = 'WebShop'
+META_KEYWORDS = 'Webshop, products, accessoires, supplies, services, goodies'
+META_DESCRIPTION = 'WebShop is an online shopping system of products, accessoires, supplies, goodies and different services.'

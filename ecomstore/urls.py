@@ -1,8 +1,8 @@
-from django.conf.urls import patterns, include, url
-import settings
-import os
+from django.conf.urls import patterns, include
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+import settings
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -15,5 +15,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
-    (r'^catalog/$', 'preview.views.home'),
+    (r'^', include('catalog.urls')),
+    #(r'^catalog/$', 'templates.preview.views.home'),
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': '/home/stefan/bud&terence/WebShop/code/WebShop/ecomstore/static'})
 )
