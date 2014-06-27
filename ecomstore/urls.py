@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
-import settings
+
 
 admin.autodiscover()
 
@@ -17,6 +17,9 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^', include('catalog.urls')),
     #(r'^catalog/$', 'templates.preview.views.home'),
-    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {
-        'document_root': '/home/stefan/bud&terence/WebShop/code/WebShop/ecomstore/static'})
+    #(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+    #    'document_root': '/home/stefan/budterence/WebShop/code/WebShop/ecomstore/static'}),
+    (r'^cart/', include('cart.urls')),
+
 )
+
