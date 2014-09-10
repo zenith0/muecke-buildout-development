@@ -1,6 +1,13 @@
 WebShop
 =======
 
+Precondition
+------------
+Pip has to be installed
+$ apt-get install python-pip
+Upgrade setuptools (>= 0.7)
+$ pip install --upgrade setuptools
+
 How to install?
 --------------
 Check it out from GitHub
@@ -10,6 +17,8 @@ $ git clone git@github.com:zenith0/muecke.git
 Change to the directory
 
 $ cd muecke
+$mkdir dlcache
+
 
 Bootstrap buildout
 
