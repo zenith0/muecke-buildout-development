@@ -4,10 +4,14 @@ WebShop
 Precondition
 ------------
 Pip has to be installed
+
 $ apt-get install python-pip
+
 Upgrade setuptools (>= 0.7)
+
 $ pip install --upgrade setuptools
-$ apt-get install python2.7-dev python-imaging
+
+$ apt-get install python2.7-dev python-imaging mysql-server
 
 
 How to install?
