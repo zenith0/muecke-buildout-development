@@ -2,9 +2,9 @@
 How to use it?
 ==============
 
-1. Check it out from bitbucket
+1. Check it out from Github
     
-    $ git clone https://githubm.com/zenith0/muecke-buildout-development.git
+    $ git clone https://github.com/zenith0/muecke-buildout-development.git
 
 2. Change to the directory
 
