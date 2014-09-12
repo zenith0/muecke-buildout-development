@@ -1,18 +1,10 @@
-What is it?
-===========
-
-This is the development buildout script for LFS. 
-
-It will create a complete developement evironment for LFS. 
-
-LFS is an online shop based on Python, Django and jQuery.
 
 How to use it?
 ==============
 
 1. Check it out from bitbucket
     
-    $ hg clone https://bitbucket.org/diefenbach/muecke-buildout-development
+    $ git clone https://githubm.com/zenith0/muecke-buildout-development.git
 
 2. Change to the directory
 
@@ -40,17 +32,7 @@ How to use it?
 
     $ bin/django runserver
     
-9. Browse to LFS
+9. Browse to Shop
 
     http://localhost:8000
     
-More Information
-================
-
-* `Official page <http://www.getmuecke.com/>`_
-* `Documentation on PyPI <http://packages.python.org/django-muecke/index.html>`_
-* `Releases on PyPI <http://pypi.python.org/pypi/django-muecke>`_
-* `Source code on bitbucket.org <http://bitbucket.org/diefenbach/django-muecke>`_
-* `Google Group <http://groups.google.com/group/django-muecke>`_
-* `mueckeproject on Twitter <http://twitter.com/mueckeproject>`_
-* `IRC <irc://irc.freenode.net/django-muecke>`_
