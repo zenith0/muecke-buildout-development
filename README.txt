@@ -1,4 +1,14 @@
 
+Pre-Install Requirements
+========================
+Pip has to be installed
+
+$ apt-get install python-pip
+
+Upgrade setuptools (>= 0.7)
+
+$ pip install --upgrade setuptools
+
 How to use it?
 ==============
 
