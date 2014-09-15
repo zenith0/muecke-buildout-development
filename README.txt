@@ -18,7 +18,7 @@ How to use it?
 
 1. Check it out from Github
     
-    $ git clone https://github.com/zenith0/muecke-buildout-development.git
+    $ git clone https://github.com/Bud-and-Terence/muecke-buildout-development.git
 
 2. Change to the directory
 
