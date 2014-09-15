@@ -38,7 +38,7 @@ How to use it?
 
     $ bin/django syncdb
     
-7. Initialize LFS
+7. Initialize muecke
 
     $ bin/django muecke_init
 
