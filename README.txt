@@ -9,6 +9,8 @@ Upgrade setuptools (>= 0.7)
 
 $ pip install --upgrade setuptools
 
+$ pip install requests
+
 $ apt-get install python2.7-dev python-imaging mysql-server python-mysqldb
 
 How to use it?
